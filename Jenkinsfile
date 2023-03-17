@@ -13,7 +13,12 @@ pipeline {
                 sh ("terraform init -reconfigure") 
             }
         }
-        
+        stage ("terraform validate") {
+            steps {
+                sh ("terraform init -reconfigure") 
+            }
+        }
+
         stage ("plan") {
             steps {
                 sh ('terraform plan') 
